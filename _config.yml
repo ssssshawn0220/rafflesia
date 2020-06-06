@@ -1,3 +1,20 @@
+# Developer's Note: This is a sample _config.yml file offered with
+# jekyll-theme-prologue for your convenience. To use it, move it to your
+# project's root directory. Please note that the following lines are
+# NECESSARY for Prologue to work correctly:
+#
+# theme: jekyll-theme-prologue
+# collections: [sections]
+#
+# They activate the theme and tell Jekyll to find your homepage content
+# in /_sections. Note where "sections" starts with an underscore
+# and where it doesn't. The social settings will make links to
+# Twitter, etc., but only if you give the URL.
+#
+# Also, be sure to customize url and baseurl for your site.
+#
+# ---------------------------------------------------------------
+#
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -13,49 +30,35 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: L'Ami du peuple
-email: jcoenep@hotmail.com
-description: >
-  Journal politique impartial, <br>
-  Par Mr. P. Marat auteur de l'Offrande a la patrie, <br>
-  du Moniteur et du Plan de Constitution, etc.
-tagline: vitam impendere vero
-location: Versailles
-date: true
-baseurl: "/marat" # the subpath of your site, e.g. /blog
-url: "http://johncoene.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-author: Jean-Paul Marat
-google_analytics: UA-101394056-1
+title: Your awesome title
+subtitle: Your awesome subtitle
+description: >- # this means to ignore newlines until "baseurl:"
+  This is the demo site for a Jekyll theme version of
+  HTML5 UP's sleek, responsive site template Prologue.
+author: Your Incredible Name
+email: your-email@example.com
+avatar: assets/images/avatar.jpg
 
-# SEO
-twitter:
-  username: jdatap
+# You'll want to customize url and baseurl for your own site:
+baseurl: "/jekyll-theme-prologue" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
-logo: /assets/logo.png
+# Social settings
+# Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
+twitter_url:
+facebook_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+github_url:
+stackoverflow_url:
+pinterest_url:
+slack_url:
+dribbble_url:
 
-lang: fr
+# Google Analytics Tracking ID goes here:
+google_analytics:
 
-facebook:
- app_id: 101766790448070
-
-social:
-  name: John Coene
-  links:
-    - https://twitter.com/jdatap
-    - https://www.linkedin.com/in/johncoene
-    - https://plus.google.com/109009224717674019651
-    - https://github.com/JohnCoene
-
-# Build settings
-exclude: README.md
-markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
-  - jekyll-seo-tag
-exclude:
-  - Gemfile
-  - Gemfile.lock
-plugins_dir:
-  - jekyll-roman
-  - jekyll-seo-tag
+# The following settings are NECESSARY for the Prologue theme to run:
+theme: jekyll-theme-prologue
+collections: [sections]
