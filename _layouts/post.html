@@ -1,18 +1,43 @@
----
-layout: default
----
-<article class="page-article">
-  <div class="wrap-content">
-    <header class="page-header">
-      <h1 class="page-title">{{page.title}}</h1>
-      <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-    </header>
-    <div class="page-content">
-      {% if page.img %}
-      <img class="page-img" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
-      {% endif %}
-      {{page.content | markdownify}}
-    </div>
-    {% include disqus.html %}
-  </div>
-</article>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% include header.html %}
+  </head>
+  <body>
+
+    {% include nav.html %}
+
+    <main>
+      <div class="container">
+        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line">
+        <p class="center">[&nbsp;N<sup>o</sup>{% for post in site.posts %}
+              {% if post.title == page.title %}
+              {{ forloop.index | roman }}
+              {% endif %}
+              {% endfor %}&nbsp;]
+        <span>&nbsp;{{ page.keywords }}</span></p>
+        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line flip">
+
+        <h2 class="brand center" id="title">{{ page.title | upcase }}</h2>
+        {% if page.abstract %}<h5 class="center">{{ page.abstract }}</h5>{% endif %}
+        {% if page.category %}
+        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag flip">
+        <p class="right tagline">{{ page.category }}</p>
+        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag">
+        {% endif %}
+        <br>
+        <h4 class="center space">{{ site.location | upcase }}</h4>
+        <h5 class="center">{{ page.date | date_to_long_string | upcase }}</h5>
+
+        <div class="threecol justify">
+          {{ content }}
+        </div>
+
+        <p class="right italics">by {{ page.author }}</p>
+      </div>
+    </main>
+
+  </body>
+</html>
